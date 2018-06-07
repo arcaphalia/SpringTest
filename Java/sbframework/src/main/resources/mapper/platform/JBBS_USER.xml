@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bj.zy.sbframework.mapper.platform.JbbsUserMapper">
+
+	<!-- 通过查询条件查询客户 -->
+	<select id="selectByFilter" parameterType="map" resultType="JBBS_USER">
+		SELECT
+			users.birthday,
+			users.cookieid,
+			users.createtime,
+			users.email,
+			users.flag,
+			users.id,
+			users.idcard,
+			users.img,
+			users.isformal,
+			users.jifen,
+			users.lastlogintime,
+			users.loginip,
+			users.loginname,
+			users.mobile,
+			users.`name`,
+			users.onlinetime,
+			users.org,
+			users.pwd,
+			users.qianming,
+			users.sex,
+			users.zhuceip,
+			quyu. NAME AS area
+		FROM
+			jbbs_user users
+		LEFT JOIN tb_xingzhengquyu quyu ON users.area = quyu.id
+		<where>
+			<if test="name != null">
+				and users.name like '%${name}%'
+			</if>
+			<if test="loginname != null">
+				and users.loginname like '%${loginname}%'
+			</if>
+		</where>
+		order by users.loginname
+	</select>
+</mapper>

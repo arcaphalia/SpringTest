@@ -1,0 +1,12 @@
+server:
+  port: 8090
+  #session-timeout: 30
+  tomcat.max-threads: 0
+  tomcat.uri-encoding: UTF-8
+
+logging:
+    level:
+        cn.bj.zy.sbframework.mapper: DEBUG
+spring:
+  profiles:
+    active: dev

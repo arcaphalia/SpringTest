@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+所有学生
+<ul th:each="stu,stuSta:${sList}">
+    <li>
+        序号:<span th:text="${stuSta.index}"/><br/>
+        姓名：<th:block th:text="${stu.name}"></th:block><br/>
+        年龄：<div th:text="${stu.age}"></div><br/>
+    </li>
+</ul>
+</body>
+</html>

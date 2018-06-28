@@ -1,27 +1,35 @@
 package cn.bj.zy.sbframework.model.platform;
 
+import cn.bj.zy.annotation.ModelProp;
+import cn.bj.zy.annotation.ModelTitle;
+import cn.bj.zy.core.BaseEntity;
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "`tb_chanye`")
-public class TB_CHANYE implements Serializable {
+@ModelTitle(name="人员列表")
+public class TB_CHANYE extends BaseEntity implements Serializable {
     @Id
     private String id;
 
     /**
      * 生产单位
      */
+    @ModelProp(name = "生产单位", colIndex = 1, nullable = false)
     private String production_unit;
 
     /**
      * 产品
      */
+    @ModelProp(name = "产品", colIndex = 0, nullable = false)
     private String production;
 
     /**
      * 产业性质
      */
+    @ModelProp(name = "产业性质", colIndex = 2, nullable = false)
     private String chanyexingzhi;
 
     /**

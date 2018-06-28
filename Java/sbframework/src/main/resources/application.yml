@@ -1,12 +1,22 @@
+debug: true
+logging:
+  #file: mylog.log
+  #path: logs
+  level:
+    root: debug
+    cn.bj.zy.sbframework.mapper: DEBUG
 server:
   port: 8090
   #session-timeout: 30
   tomcat.max-threads: 0
   tomcat.uri-encoding: UTF-8
 
-logging:
-    level:
-        cn.bj.zy.sbframework.mapper: DEBUG
 spring:
   profiles:
     active: dev
+# 定位模板的目录
+  mvc:
+    view:
+      prefix: classpath:/static/
+      # 给返回的页面添加后缀名
+      suffix: .html

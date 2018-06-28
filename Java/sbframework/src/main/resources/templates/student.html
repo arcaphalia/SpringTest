@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title><th:block th:text="${student.name}"/>的信息</title>
+</head>
+<body>
+该学生信息
+姓名：<span th:text="${student.name}"></span>
+年龄：<span th:text="${student.age}"></span>
+</body>
+</html>
